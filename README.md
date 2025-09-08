@@ -125,4 +125,4 @@ This project is licensed under the MIT License © 2025.
 
 ### ✨ Author
 
-Developed by [Kaustubh Jaiswal](https://github.com/<kaustubh0078>)
+Developed by [Kaustubh Jaiswal](https://github.com/kaustubh0078)
