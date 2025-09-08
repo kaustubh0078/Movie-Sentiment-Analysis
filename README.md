@@ -1,6 +1,6 @@
 # 🎬 IMDB Movie Review Sentiment Analysis
 
-This project is an end-to-end **Sentiment Analysis system** built using the [IMDB dataset](https://ai.stanford.edu/~amaas/data/sentiment/) of movie reviews.
+This project is an end-to-end **Sentiment Analysis system** built using the IMDB Dataset of movie reviews.
 The goal is to classify each review as **Positive** or **Negative** using a machine learning model.
 
 The system includes:
