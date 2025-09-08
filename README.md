@@ -1,20 +1,128 @@
 # 🎬 IMDB Movie Review Sentiment Analysis
 
-[![Python](https://img.shields.io/badge/Python-3.10-blue.svg)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green.svg)](https://movie-sentiment-analysis-bse6.onrender.com/docs)
-[![Docker](https://img.shields.io/badge/Docker-Ready-blue.svg)](https://www.docker.com/)
-[![Deployed](https://img.shields.io/badge/Deployed-Render%20%2B%20Streamlit%20Cloud-success)]([https://<your-streamlit-app>.streamlit.app](https://movie-sentiment-analysis-bkwzffwa5bh9zlljydrebn.streamlit.app/))
+This project is an end-to-end **Sentiment Analysis system** built using the [IMDB dataset](https://ai.stanford.edu/~amaas/data/sentiment/) of movie reviews.
+The goal is to classify each review as **Positive** or **Negative** using a machine learning model.
 
-
-An end-to-end **Sentiment Analysis project** using the **IMDB dataset** of movie reviews.  
-The system classifies reviews as **Positive** or **Negative** using **Logistic Regression + TF-IDF**.  
-It features:
-- 🧹 Preprocessing pipeline (cleaning, lemmatization, stopword removal)
-- 📊 TF-IDF vectorization
-- 🤖 Logistic Regression classifier
-- ⚡ FastAPI backend (`/predict` endpoint)
-- 🎨 Streamlit frontend (interactive UI)
-- 🐳 Docker support for deployment
-- ☁️ Deployment on **Render (API)** + **Streamlit Cloud (UI)**
+The system includes:
+- Data preprocessing (cleaning, lemmatization, stopword removal)
+- Feature extraction with TF-IDF
+- Logistic Regression classifier
+- REST API built with FastAPI
+- Interactive frontend built with Streamlit
+- Docker support for easy deployment
+- Live deployment on **Render (backend)** and **Streamlit Cloud (frontend)**
 
 ---
+
+## ⚙️ Setup & Installation
+
+1.  **Clone the repository**
+    ```bash
+    git clone [https://github.com/](https://github.com/)<your-username>/imdb-sentiment-analysis.git
+    cd imdb-sentiment-analysis
+    ```
+
+2.  **Create and activate virtual environment**
+    ```bash
+    # Windows
+    python -m venv venv
+    venv\Scripts\activate
+
+    # macOS / Linux
+    python3 -m venv venv
+    source venv/bin/activate
+    ```
+
+3.  **Install dependencies**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Train the model**
+    ```bash
+    python src/train.py
+    ```
+    This generates the following files inside `models/`:
+    * `sentiment_model.pkl`
+    * `tfidf_vectorizer.pkl`
+
+---
+
+## 🚀 Running Locally
+
+1.  **Start the FastAPI backend:**
+    ```bash
+    uvicorn app.main:app --reload
+    ```
+    The API will be available at: 👉 [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+
+2.  **Run the Streamlit frontend (in another terminal):**
+    ```bash
+    streamlit run app/streamlit_app.py
+    ```
+    The UI will open at: 👉 [http://localhost:8501](http://localhost:8501)
+
+---
+
+## 🐳 Running with Docker
+
+1.  **Build the Docker image:**
+    ```bash
+    docker build -t imdb-sentiment .
+    ```
+
+2.  **Run the Docker container:**
+    ```bash
+    docker run -p 8000:8000 imdb-sentiment
+    ```
+    The FastAPI backend will be accessible at [http://localhost:8000](http://localhost:8000).
+
+---
+
+## ☁️ Deployment
+
+### Backend (FastAPI)
+
+Deployed on **Render**. Example link:
+[https://movie-sentiment-analysis-bse6.onrender.com/docs](https://movie-sentiment-analysis-bse6.onrender.com/docs)
+
+### Frontend (Streamlit)
+
+Deployed on **Streamlit Cloud**. Example link:
+[https://your-username-imdb-sentiment.streamlit.app](https://your-username-imdb-sentiment.streamlit.app)
+
+When deploying the Streamlit app, you must set the `API_URL` environment variable to point to your deployed backend service. For example:
+API_URL=https://movie-sentiment-analysis-bse6.onrender.com/predict
+
+
+---
+
+## 🧪 Example Predictions
+
+| Review                                         | Prediction                                     |
+| ---------------------------------------------- | ---------------------------------------------- |
+| "This movie was absolutely fantastic!"         | Positive                                       |
+| "The worst film I’ve ever seen."               | Negative                                       |
+| "It’s so bad that it’s actually entertaining." | Negative (sarcasm is difficult for this model) |
+
+---
+
+## 🔮 Future Work
+
+- [ ] Extend TF-IDF with bigrams/trigrams to capture more context.
+- [ ] Experiment with deep learning models like LSTMs or Transformers (e.g., BERT).
+- [ ] Improve handling of sarcasm and mixed sentiments.
+- [ ] Add a database and user authentication for storing reviews.
+- [ ] Deploy both backend and frontend in a single container for simplicity.
+
+---
+
+## 📜 License
+
+This project is licensed under the MIT License © 2025.
+
+---
+
+### ✨ Author
+
+Developed by [Kaustubh Jaiswal](https://github.com/<kaustubh0078>)
