@@ -5,7 +5,8 @@ import os
 st.title("🎬 IMDB Movie Review Sentiment Analysis")
 
 # Backend URL (local for dev, remote for deploy)
-API_URL = os.getenv("API_URL", "http://localhost:8000/predict")
+API_URL = os.getenv("API_URL", "https://movie-sentiment-analysis-bse6.onrender.com/predict")
+
 
 review = st.text_area("Enter a movie review:")
 
