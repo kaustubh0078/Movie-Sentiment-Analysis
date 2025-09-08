@@ -18,7 +18,7 @@ The system includes:
 
 1.  **Clone the repository**
     ```bash
-    git clone [https://github.com/](https://github.com/)<your-username>/imdb-sentiment-analysis.git
+    git clone [https://github.com/](https://github.com/)<kaustubh0078>/imdb-sentiment-analysis.git
     cd imdb-sentiment-analysis
     ```
 
@@ -89,7 +89,7 @@ Deployed on **Render**. Example link:
 ### Frontend (Streamlit)
 
 Deployed on **Streamlit Cloud**. Example link:
-[https://your-username-imdb-sentiment.streamlit.app](https://your-username-imdb-sentiment.streamlit.app)
+[https://your-username-imdb-sentiment.streamlit.app](https://movie-sentiment-analysis-bkwzffwa5bh9zlljydrebn.streamlit.app/)
 
 When deploying the Streamlit app, you must set the `API_URL` environment variable to point to your deployed backend service. For example:
 API_URL=https://movie-sentiment-analysis-bse6.onrender.com/predict
